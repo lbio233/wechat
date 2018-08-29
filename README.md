@@ -2,6 +2,14 @@
 ## 以我本人的微信为例
 #### 将所有好友的头像进行合成
 <img height="300" align="center" src="https://github.com/lbio233/wechat/blob/master/analyse/merged.png" alt="">
+#### 好友的性别分布
+(https://github.com/lbio233/wechat/tree/master/source/bar.png)
+#### 所在省份的柱状图展示
+<img height="300" align="center" src="https://github.com/lbio233/wechat/tree/master/source/bar.png" alt="">
+#### 所在省份的地图展示
+<img height="300" align="center" src="https://github.com/lbio233/wechat/tree/master/source/map.png" alt="">
+#### 个性签名词云展示
+<img height="300" align="center" src="https://github.com/lbio233/wechat/tree/master/source/word_cloud.png" alt="">
 
 #### get_user_info.py文件用来获取好友信息，包括头像，昵称，性别，所在省份，个性签名等
 #### analyse.py文件用来生成具体的可视化图像
