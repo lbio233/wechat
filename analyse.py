@@ -35,12 +35,12 @@ def get_pie(item_name,item_name_list,item_num_list):
     pie.render(out_file_name)
 
 def get_bar(item_name,item_name_list,item_num_list):
-    subtitle = "肥波小试牛刀"
+    subtitle = "lbio_wechat"
     bar = Bar(item_name,page_title = item_name,title_text_size=30,title_pos='center',\
         subtitle = subtitle,subtitle_text_size = 25)
     
     bar.add("", item_name_list, item_num_list,title_pos='center', xaxis_interval=0,xaxis_rotate=27,\
-        xaxis_label_textsize = 20,yaxis_label_textsize = 20,yaxis_name_pos='end',yaxis_pos = "%50")
+        xaxis_label_textsize = 20,yaxis_label_textsize = 20,yaxis_name_pos='end',yaxis_pos = "%50",is_label_show=True)
     bar.show_config()
 
     grid = Grid(width=1300,height= 800)
@@ -50,10 +50,10 @@ def get_bar(item_name,item_name_list,item_num_list):
 
 
 def get_map(item_name,item_name_list,item_num_list):
-    subtitle = "肥波小试牛刀"
+    subtitle = "lbio_wechat"
     _map = Map(item_name,width=1300,height= 800,title_pos='center',title_text_size=30,\
         subtitle = subtitle,subtitle_text_size = 25)
-    _map.add("", item_name_list, item_num_list, maptype='china', is_visualmap=True, visual_text_color='#000')
+    _map.add("", item_name_list, item_num_list, maptype='china', is_visualmap=True, visual_text_color='#000',is_label_show=True)
 
     out_file_name = './analyse/'+item_name+'.html'
     _map.render(out_file_name)
@@ -207,7 +207,7 @@ if __name__ == '__main__':
     get_bar('地区统计',name_list,num_list)
 
     #地图
-    get_map('微信好友地图可视化',name_list,num_list)
+    get_map('好友地区分布',name_list,num_list)
 
     #昵称
 #    num_list = [5 for i in range(1,len(NickName_list)+1)]
@@ -215,7 +215,7 @@ if __name__ == '__main__':
 
     #微信好友签名关键词
     name_list,num_list = counter2list(Signature_counter.most_common(200))
-    word_cloud('微信好友签名关键词',name_list,num_list,[20,100])
+    word_cloud('个性签名词云',name_list,num_list,[20,100])
     
     #头像合成
     mergeImage()
