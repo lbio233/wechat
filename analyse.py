@@ -5,9 +5,6 @@ Created on Wed Aug 29 09:31:55 2018
 @author: 15862
 """
 
-#coding=utf-8
-#author:微信公众号：大数据前沿
-#查看代码讲解，视频教程，请微信添加好友搜索公众号[大数据前沿]查看历史消息获取。
 import json
 import re
 from pyecharts import Bar
@@ -24,8 +21,8 @@ import codecs
 
 
 def get_pie(item_name,item_name_list,item_num_list):
-    totle = item_num_list[0]+item_num_list[1]+item_num_list[2]
-    subtitle = "共有:%d个好友"%totle
+    total = item_num_list[0]+item_num_list[1]+item_num_list[2]
+    subtitle = "共有:%d个好友"%total
 
     pie = Pie(item_name,page_title = item_name,title_text_size=30,title_pos='center',\
         subtitle = subtitle,subtitle_text_size = 25,width=800,height= 800)
@@ -109,7 +106,7 @@ def counter2list(_counter):
     return name_list,num_list
 
 def get_tag(text,cnt):
-    text = re.sub(r"<span.*><span>", "", text)
+    text = re.sub(r"<span.*span>", "", text)
     print ('正在分析句子:',text)
     tag_list = jieba.analyse.extract_tags(text)
     for tag in tag_list:
@@ -213,8 +210,8 @@ if __name__ == '__main__':
     get_map('微信好友地图可视化',name_list,num_list)
 
     #昵称
-    num_list = [5 for i in range(1,len(NickName_list)+1)]
-    word_cloud('微信好友昵称',NickName_list,num_list,[18,18])
+#    num_list = [5 for i in range(1,len(NickName_list)+1)]
+#    word_cloud('微信好友昵称',NickName_list,num_list,[18,18])
 
     #微信好友签名关键词
     name_list,num_list = counter2list(Signature_counter.most_common(200))
